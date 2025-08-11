@@ -97,13 +97,13 @@ const SalesDashboard: React.FC<SalesDashboardProps> = ({ currentProductSearchTer
 
     // Filter states for graph
     const [metric, setMetric] = useState<'qty' | 'price' | 'total'>('total');
-    const [lineMode, setLineMode] = useState<'combined' | 'perProduct'>('combined');
+    const [lineMode, setLineMode] = useState<'combined' | 'perProduct'>('perProduct');
     interface DateRange { from: Date | undefined; to: Date | undefined; }
     const [dateRange, setDateRange] = useState<DateRange>({
         from: subDays(new Date(), 30),
         to: new Date(),
     });
-    const [dateRangePreset, setDateRangePreset] = useState<'7d' | '30d' | '90d' | 'lifetime' | 'custom'>('30d');
+    const [dateRangePreset, setDateRangePreset] = useState<'7d' | '30d' | '90d' | 'lifetime' | 'custom'>('lifetime');
     const [timeUnit, setTimeUnit] = useState<'day' | 'month' | 'year'>('day');
 
     // State for managing the Popover for custom date range
